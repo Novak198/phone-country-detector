@@ -12,16 +12,26 @@
 1. **Клонируйте репозиторий:**
    ```bash
    git clone https://github.com/Novak198/phone-country-detector.git
-   cd phone-country-detector
    
 2. Откройте файл "application.properties"
    Затем в поле - spring.datasource.password= введите свой пароль от Postgres
 
-3. **Соберите проект:**
-   ./gradlew clean build
+3. Запустите образ Postgres в Docker или запустите приложение pgAdmin.
 
-4. **Запустите приложение:**
-   java -jar build/libs/phone-country-detector-1.0.0.jar
+4. **Откройте командную строку и перейдите в расположение скачанного репозитория, выполнив команду:**
+   cd .../phone-country-detector
 
-5. **Откройте браузер**
+5. **В командной строке соберите проект, выполнив команду:**
+   gradlew clean build. Postgres должен быть обязательно запущен, иначе билд упадет с ошибкой.
+
+6. **Запустите приложение:**
+   java -jar build/libs/phone-country-detector-0.0.1-SNAPSHOT.jar
+
+7. **Дождитесь загрузки приложения.**
+   В случае успешного запуска в консоли появится подобное сообщение -  Started PhoneCountryDetectorApplication in 5.131 seconds
+
+8. **Откройте браузер**
    Перейдите по адресу - http://localhost:8088 , введите номер телефона и нажмите клавишу - "Узнать страну".
+
+9. Чтобы завершить работу приложения, в командной строке дважды нажмите сочетание клавиш CTRL + C.
+ Программа завершит работу.
